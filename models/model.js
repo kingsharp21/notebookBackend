@@ -3,17 +3,18 @@ const mongoose = require('mongoose');
 const dataSchema = new mongoose.Schema({
 
     title: {
-        type: Number,
+        type: String,
         required: true
     },
     body: {
-        type: Number,
+        type: String,
         required: true
+    },
+    date: {
+        required: true,
+        type : Date, 
+        default: Date.now
     }
-    // date: {
-    //     required: true,
-    //     type: Date
-    // }
     
 })
 
