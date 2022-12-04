@@ -10,15 +10,15 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({
   extended: true
 })); 
-app.use('/', routes)
+app.use('/api', routes)
 
 
 
 //connecting the db
 require('dotenv').config();
 
-const mongoString = process.env.DATABASE_URL
-mongoose.connect(mongoString);
+// const mongoString = process.env.DATABASE_URL
+mongoose.connect('mongodb+srv://kingsharp:kingsharp@noteapp.nuiddpv.mongodb.net/?retryWrites=true&w=majority');
 const database = mongoose.connection
 
 database.on('error', (error) => {
