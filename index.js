@@ -4,12 +4,13 @@ const app = express();
 const bodyParser = require('body-parser')
 //connecting the routes
 const routes = require('./routes/routes');
+const PORT = process.env.PORT || 3030
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({
   extended: true
 })); 
-app.use('/api', routes)
+app.use('/', routes)
 
 
 
@@ -33,8 +34,8 @@ database.once('connected', () => {
 
 
 
-app.listen(3000, () => {
-    console.log(`Server Started at ${3000}`)
+app.listen(PORT, () => {
+    console.log(`Server Started at ${PORT}`)
 })
 
 
